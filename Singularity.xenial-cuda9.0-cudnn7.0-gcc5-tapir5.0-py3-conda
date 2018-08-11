@@ -44,10 +44,12 @@ chmod +x anaconda.sh
 ./anaconda.sh -b -p /opt/conda
 rm /anaconda.sh
 
+ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+
 %test
 gcc --version
 clang --version
 python3 --version
-python3 -c 'import yaml'
 protoc --version
+source /etc/profile.d/conda.sh
 conda --version
